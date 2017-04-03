@@ -38,7 +38,8 @@ func createConnection(cfg config.Config) (con client.Client, err error) {
 	})
 	if err != nil {
 		log.Printf("[EE] Failed to establish connection to '%s': %v", addr, err)
-
+	} else {
+		log.Printf("[DD] Establish connection to '%s'", addr)
 	}
 	return
 }
@@ -71,20 +72,19 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 				continue
 			}
 			// Create a point and add to batch
-			tags := qm.Dimensions
 			fields := map[string]interface{}{
 				"value": qm.Value,
 			}
 
-			pt, err := client.NewPoint(qm.Name, tags, fields, qm.Time)
+			pt, err := client.NewPoint(qm.Name, qm.Dimensions, fields, qm.Time)
 			if err != nil {
-				log.Fatal(err)
+				log.Printf("[EE] Failed to create new point: %v", err)
 			}
 			bp.AddPoint(pt)
 
 			// Write the batch
 			if err := c.Write(bp); err != nil {
-				log.Fatal(err)
+				log.Printf("[EE] Failed to write batch: %v", err)
 			}
 		}
 	}
