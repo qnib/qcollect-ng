@@ -13,3 +13,6 @@ handler:
   opentsdb:
     server: "172.17.0.1"
     inputs: "file"
+  influxdb:
+    server: "172.17.0.1"
+    inputs: "file"

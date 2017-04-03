@@ -1,4 +1,4 @@
-package handler_opentsdb
+package main
 
 import (
 	"C"

@@ -3,50 +3,6 @@
 	"ignore": "test",
 	"package": [
 		{
-			"path": "C",
-			"revision": ""
-		},
-		{
-			"path": "bufio",
-			"revision": ""
-		},
-		{
-			"path": "bytes",
-			"revision": ""
-		},
-		{
-			"path": "container/heap",
-			"revision": ""
-		},
-		{
-			"path": "encoding",
-			"revision": ""
-		},
-		{
-			"path": "encoding/base64",
-			"revision": ""
-		},
-		{
-			"path": "encoding/hex",
-			"revision": ""
-		},
-		{
-			"path": "encoding/json",
-			"revision": ""
-		},
-		{
-			"path": "errors",
-			"revision": ""
-		},
-		{
-			"path": "flag",
-			"revision": ""
-		},
-		{
-			"path": "fmt",
-			"revision": ""
-		},
-		{
 			"checksumSHA1": "pPH/BoINXxzYDObljpsGZbysMrw=",
 			"path": "github.com/BurntSushi/toml",
 			"revision": "b26d9c308763d68093482582cea63d69be07a0f0",
@@ -57,12 +13,6 @@
 			"path": "github.com/codegangsta/cli",
 			"revision": "8ba6f23b6e36d03666a14bd9421f5e3efcb59aca",
 			"revisionTime": "2017-03-29T01:35:17Z"
-		},
-		{
-			"checksumSHA1": "dvabztWVQX8f6oMLRyv4dLH+TGY=",
-			"path": "github.com/davecgh/go-spew/spew",
-			"revision": "346938d642f2ec3594ed81d874461961cd0faa76",
-			"revisionTime": "2016-10-29T20:57:26Z"
 		},
 		{
 			"checksumSHA1": "ImX1uv6O09ggFeBPUJJ2nu7MPSA=",
@@ -113,70 +63,82 @@
 			"revisionTime": "2017-02-07T02:33:46Z"
 		},
 		{
-			"checksumSHA1": "LuFv4/jlrmFNnDb/5SCSEPAM9vU=",
-			"path": "github.com/pmezard/go-difflib/difflib",
-			"revision": "792786c7400a136282c1664665ae0a8db921c6c2",
-			"revisionTime": "2016-01-10T10:55:54Z"
+			"checksumSHA1": "1kVa89e/yk8L2liYiFuJrNWiXfU=",
+			"path": "github.com/influxdata/influxdb/client/v2",
+			"revision": "566d8421791a41ef46499435a637680bb0341d18",
+			"revisionTime": "2017-04-03T16:06:16Z"
+		},
+		{
+			"checksumSHA1": "FF7fzjW7yWl/ObniSAlidx2eXUE=",
+			"path": "github.com/influxdata/influxdb/models",
+			"revision": "566d8421791a41ef46499435a637680bb0341d18",
+			"revisionTime": "2017-04-03T16:06:16Z"
+		},
+		{
+			"checksumSHA1": "H/J/qLqzUONXIecHHKtVZmxJZZA=",
+			"path": "github.com/influxdata/influxdb/pkg/escape",
+			"revision": "566d8421791a41ef46499435a637680bb0341d18",
+			"revisionTime": "2017-04-03T16:06:16Z"
 		},
 		{
 			"checksumSHA1": "srAlNJ70CcTrBpohUeJZllKp8uI=",
 			"path": "github.com/qnib/qcollect-ng",
-			"revision": "e6fe08dba653918aec81031cd4043c0703899e25",
-			"revisionTime": "2017-04-03T15:24:08Z"
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
 		},
 		{
-			"checksumSHA1": "pA+hvd1sU/uX/3YS2okDpN/l1U0=",
+			"checksumSHA1": "tWBWbruUCH2up8/4EebpUL7nhao=",
 			"path": "github.com/qnib/qcollect-ng/collectors/file",
-			"revision": "e6fe08dba653918aec81031cd4043c0703899e25",
-			"revisionTime": "2017-04-03T15:24:08Z"
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
 		},
 		{
-			"checksumSHA1": "+NbO03uAugnK3z2fEIrf180rCGM=",
+			"checksumSHA1": "0J4KGocymhRNW9cpaeqLQbg9ilM=",
 			"path": "github.com/qnib/qcollect-ng/filters/id",
-			"revision": "e6fe08dba653918aec81031cd4043c0703899e25",
-			"revisionTime": "2017-04-03T15:24:08Z"
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
 		},
 		{
-			"checksumSHA1": "8S23i2r45MmxU2fO0Cl3qwnBsN0=",
+			"checksumSHA1": "NbcyWtOTPDQsrWAu7oByJaDtipM=",
+			"path": "github.com/qnib/qcollect-ng/handlers/influxdb",
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
+		},
+		{
+			"checksumSHA1": "uP+4EJIrjzUMpFJoKroilZbyfaA=",
 			"path": "github.com/qnib/qcollect-ng/handlers/log",
-			"revision": "e6fe08dba653918aec81031cd4043c0703899e25",
-			"revisionTime": "2017-04-03T15:24:08Z"
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
 		},
 		{
-			"checksumSHA1": "5mrUUT93dfGRUwsl7/AQsB+r5uQ=",
+			"checksumSHA1": "7QnXak8a/6TXngMjINjjuBpGHkU=",
 			"path": "github.com/qnib/qcollect-ng/handlers/opentsdb",
-			"revision": "e6fe08dba653918aec81031cd4043c0703899e25",
-			"revisionTime": "2017-04-03T15:24:08Z"
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
 		},
 		{
 			"checksumSHA1": "ytAR4EHsCW9oHxbP97HwO4UI9L4=",
 			"path": "github.com/qnib/qcollect-ng/types",
-			"revision": "e6fe08dba653918aec81031cd4043c0703899e25",
-			"revisionTime": "2017-04-03T15:24:08Z"
+			"revision": "c1295cc0d031b0d7fdeab144d48f23e446493443",
+			"revisionTime": "2017-04-03T17:04:28Z"
 		},
 		{
-			"checksumSHA1": "reJN4JcstsEfsC2+sYXR4x2JJ4I=",
+			"checksumSHA1": "R4RnPtx4aVeBFydUxn+uta5OmN0=",
 			"path": "github.com/qnib/qframe/server",
-			"revision": "1f97faa8f2c078d1cd7d4448fb839bbce5dc83bf",
-			"revisionTime": "2017-04-03T15:05:47Z"
+			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
+			"revisionTime": "2017-04-03T11:42:44Z"
 		},
 		{
 			"checksumSHA1": "Fmefc2A1jP0emwjGc1I2ediSDjM=",
 			"path": "github.com/qnib/qframe/types",
-			"revision": "1f97faa8f2c078d1cd7d4448fb839bbce5dc83bf",
-			"revisionTime": "2017-04-03T15:05:47Z"
+			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
+			"revisionTime": "2017-04-03T11:42:44Z"
 		},
 		{
-			"checksumSHA1": "k+JI0tuuWFAsjjqpvMxG0XlSzaY=",
+			"checksumSHA1": "PMXyLxDclbYZdfh2WJVUMehicz4=",
 			"path": "github.com/qnib/qframe/utils",
-			"revision": "1f97faa8f2c078d1cd7d4448fb839bbce5dc83bf",
-			"revisionTime": "2017-04-03T15:05:47Z"
-		},
-		{
-			"checksumSHA1": "JXUVA1jky8ZX8w09p2t5KLs97Nc=",
-			"path": "github.com/stretchr/testify/assert",
-			"revision": "4d4bfba8f1d1027c4fdbe371823030df51419987",
-			"revisionTime": "2017-01-30T11:31:45Z"
+			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
+			"revisionTime": "2017-04-03T11:42:44Z"
 		},
 		{
 			"checksumSHA1": "m8hYD/alsufIYIM7sR06wbL+dKo=",
@@ -209,123 +171,7 @@
 			"revisionTime": "2017-02-08T14:18:51Z"
 		},
 		{
-			"path": "io",
-			"revision": ""
-		},
-		{
-			"path": "io/ioutil",
-			"revision": ""
-		},
-		{
-			"path": "log",
-			"revision": ""
-		},
-		{
-			"path": "math",
-			"revision": ""
-		},
-		{
-			"path": "net",
-			"revision": ""
-		},
-		{
-			"path": "net/http",
-			"revision": ""
-		},
-		{
-			"path": "net/http/httptest",
-			"revision": ""
-		},
-		{
-			"path": "net/url",
-			"revision": ""
-		},
-		{
-			"path": "os",
-			"revision": ""
-		},
-		{
-			"path": "os/signal",
-			"revision": ""
-		},
-		{
-			"path": "path/filepath",
-			"revision": ""
-		},
-		{
-			"path": "plugin",
-			"revision": ""
-		},
-		{
-			"path": "reflect",
-			"revision": ""
-		},
-		{
 			"path": "regex",
-			"revision": ""
-		},
-		{
-			"path": "regexp",
-			"revision": ""
-		},
-		{
-			"path": "runtime",
-			"revision": ""
-		},
-		{
-			"path": "runtime/debug",
-			"revision": ""
-		},
-		{
-			"path": "sort",
-			"revision": ""
-		},
-		{
-			"path": "strconv",
-			"revision": ""
-		},
-		{
-			"path": "strings",
-			"revision": ""
-		},
-		{
-			"path": "sync",
-			"revision": ""
-		},
-		{
-			"path": "sync/atomic",
-			"revision": ""
-		},
-		{
-			"path": "syscall",
-			"revision": ""
-		},
-		{
-			"path": "testing",
-			"revision": ""
-		},
-		{
-			"path": "text/tabwriter",
-			"revision": ""
-		},
-		{
-			"path": "text/template",
-			"revision": ""
-		},
-		{
-			"path": "time",
-			"revision": ""
-		},
-		{
-			"path": "unicode",
-			"revision": ""
-		},
-		{
-			"path": "unicode/utf8",
-			"revision": ""
-		},
-		{
-			"path": "unsafe",
 			"revision": ""
 		}
 	],

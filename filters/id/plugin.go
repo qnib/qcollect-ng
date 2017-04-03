@@ -1,4 +1,4 @@
-package filter_id
+package main
 
 import (
 	"C"
