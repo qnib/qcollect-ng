@@ -56,11 +56,14 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 	}
 	for {
 		val := bg.Recv()
-		qm := val.(qtypes.Metric)
-		if len(inputs) != 0 && ! qutils.IsInput(inputs, qm.Source) {
-			continue
+		switch val.(type) {
+		case qtypes.Metric:
+			qm := val.(qtypes.Metric)
+			if len(inputs) != 0 && ! qutils.IsInput(inputs, qm.Source) {
+				continue
+			}
+			fmt.Fprintf(conn, convertToOpenTSDBHandler(qm))
 		}
-		fmt.Fprintf(conn, convertToOpenTSDBHandler(qm))
 	}
 }
 

@@ -55,7 +55,6 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 		}
 		val, err := strconv.ParseFloat(m["value"], 64)
 		t, tErr := strconv.Atoi(m["time"])
-		fmt.Printf("%s >> name:%s val:%f t:%d\n", line.Text, m["name"], val, t)
 		if err == nil && tErr == nil {
 			qm := qtypes.NewExt("input", "file", m["metric"], qtypes.Gauge, val, dim, time.Unix(int64(t),0), false)
 			qChan.Data.Send(qm)

@@ -17,13 +17,16 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 	bg := qChan.Data.Join()
 	for {
 		val := bg.Recv()
-		qm := val.(qtypes.Metric)
-		if qm.SourceID == myId {
-			continue
+		switch val.(type) {
+		case qtypes.Metric:
+			qm := val.(qtypes.Metric)
+			if qm.SourceID == myId {
+				continue
+			}
+			qm.Type = "filter"
+			qm.Source = strings.Join(append(strings.Split(qm.Source, "->"), "id"), "->")
+			qm.SourceID = myId
+			qChan.Data.Send(qm)
 		}
-		qm.Type = "filter"
-		qm.Source = strings.Join(append(strings.Split(qm.Source,"->"), "id"), "->")
-		qm.SourceID = myId
-		qChan.Data.Send(qm)
 	}
 }

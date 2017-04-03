@@ -21,12 +21,15 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 	inputs := strings.Split(inStr, ",")
 	for {
 		val := bg.Recv()
-		qm := val.(qtypes.Metric)
-		if len(inputs) != 0 && ! qutils.IsInput(inputs, qm.Source) {
-			//fmt.Printf("%s %-7s sType:%-6s sName:%-10s[%d] DROPED : %s\n", qm.TimeString(), qm.LogString(), qm.Type, qm.Source, qm.SourceID, qm.Msg)
-			continue
+		switch val.(type) {
+		case qtypes.Metric:
+			qm := val.(qtypes.Metric)
+			if len(inputs) != 0 && ! qutils.IsInput(inputs, qm.Source) {
+				//fmt.Printf("%s %-7s sType:%-6s sName:%-10s[%d] DROPED : %s\n", qm.TimeString(), qm.LogString(), qm.Type, qm.Source, qm.SourceID, qm.Msg)
+				continue
+			}
+			fmt.Printf("%s %-7s sType:%-6s sName:[%d]%-10s %s:%f\n", qm.TimeString(), qm.LogString(), qm.Type, qm.SourceID, qm.Source, qm.Name, qm.Value)
 		}
-		fmt.Printf("%s %-7s sType:%-6s sName:[%d]%-10s %s:%f\n", qm.TimeString(), qm.LogString(), qm.Type, qm.SourceID, qm.Source, qm.Name, qm.Value)
 	}
 }
 

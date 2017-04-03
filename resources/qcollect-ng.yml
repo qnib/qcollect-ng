@@ -2,7 +2,7 @@ ticker:
     interval: 5000
 collectors: "file"
 filters: "id"
-handlers: "opentsdb"
+handlers: "influxdb"
 collector:
   file:
     path: "resources/metrics.graphite"
@@ -10,9 +10,6 @@ collector:
 handler:
   log:
     inputs: "id"
-  opentsdb:
-    server: "172.17.0.1"
-    inputs: "file"
   influxdb:
     server: "172.17.0.1"
     inputs: "file"

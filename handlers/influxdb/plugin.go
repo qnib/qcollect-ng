@@ -63,26 +63,29 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 	}
 	for {
 		val := bg.Recv()
-		qm := val.(qtypes.Metric)
-		if len(inputs) != 0 && ! qutils.IsInput(inputs, qm.Source) {
-			//fmt.Printf("%s %-7s sType:%-6s sName:%-10s[%d] DROPED : %s\n", qm.TimeString(), qm.LogString(), qm.Type, qm.Source, qm.SourceID, qm.Msg)
-			continue
-		}
-		// Create a point and add to batch
-		tags := qm.Dimensions
-		fields := map[string]interface{}{
-			"value":   qm.Value,
-		}
+		switch val.(type) {
+		case qtypes.Metric:
+			qm := val.(qtypes.Metric)
+			if len(inputs) != 0 && ! qutils.IsInput(inputs, qm.Source) {
+				//fmt.Printf("%s %-7s sType:%-6s sName:%-10s[%d] DROPED : %s\n", qm.TimeString(), qm.LogString(), qm.Type, qm.Source, qm.SourceID, qm.Msg)
+				continue
+			}
+			// Create a point and add to batch
+			tags := qm.Dimensions
+			fields := map[string]interface{}{
+				"value": qm.Value,
+			}
 
-		pt, err := client.NewPoint(qm.Name, tags, fields, qm.Time)
-		if err != nil {
-			log.Fatal(err)
-		}
-		bp.AddPoint(pt)
+			pt, err := client.NewPoint(qm.Name, tags, fields, qm.Time)
+			if err != nil {
+				log.Fatal(err)
+			}
+			bp.AddPoint(pt)
 
-		// Write the batch
-		if err := c.Write(bp); err != nil {
-			log.Fatal(err)
+			// Write the batch
+			if err := c.Write(bp); err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
 }
