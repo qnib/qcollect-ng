@@ -9,3 +9,4 @@ pipeline:
      - govendor fetch +e +m
      - ./test.sh
      - ./build.sh
+     - go build -o bin/qcollect-ng
