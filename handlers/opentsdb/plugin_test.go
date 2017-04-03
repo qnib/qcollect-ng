@@ -1,4 +1,4 @@
-package opentsdb
+package handler_opentsdb
 
 import (
 	"testing"

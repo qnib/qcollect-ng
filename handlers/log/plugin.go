@@ -1,4 +1,4 @@
-package main
+package hander_log
 
 import (
 	"C"

@@ -24,3 +24,4 @@ _testmain.go
 *.prof
 resources/metrics.*
 vendor
+resources/coverity/*

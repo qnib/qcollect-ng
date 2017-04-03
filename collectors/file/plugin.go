@@ -1,4 +1,4 @@
-package main
+package collector_file
 
 import (
 	"C"

@@ -15,6 +15,12 @@
 			"revisionTime": "2017-03-29T01:35:17Z"
 		},
 		{
+			"checksumSHA1": "dvabztWVQX8f6oMLRyv4dLH+TGY=",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "346938d642f2ec3594ed81d874461961cd0faa76",
+			"revisionTime": "2016-10-29T20:57:26Z"
+		},
+		{
 			"checksumSHA1": "ImX1uv6O09ggFeBPUJJ2nu7MPSA=",
 			"path": "github.com/ghodss/yaml",
 			"revision": "0ca9ea5df5451ffdf184b4428c902747c2c11cd7",
@@ -63,40 +69,46 @@
 			"revisionTime": "2017-02-07T02:33:46Z"
 		},
 		{
-			"checksumSHA1": "tO9bCzI2UYe7yRQHCMfRA4atDdU=",
+			"checksumSHA1": "LuFv4/jlrmFNnDb/5SCSEPAM9vU=",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "792786c7400a136282c1664665ae0a8db921c6c2",
+			"revisionTime": "2016-01-10T10:55:54Z"
+		},
+		{
+			"checksumSHA1": "VrjW4fSk/UVVA8WwNH2b4D3CUNo=",
 			"path": "github.com/qnib/qcollect-ng",
-			"revision": "1e512d680f9176639fca33af7401bc991588fb5c",
-			"revisionTime": "2017-04-03T13:23:57Z"
+			"revision": "5a63e61b591864826a0e7c978722f609d2b7f2d0",
+			"revisionTime": "2017-04-03T14:09:39Z"
 		},
 		{
-			"checksumSHA1": "q8ZQX/UTRo5CbsV0xM9X3/IiazQ=",
+			"checksumSHA1": "pA+hvd1sU/uX/3YS2okDpN/l1U0=",
 			"path": "github.com/qnib/qcollect-ng/collectors/file",
-			"revision": "1e512d680f9176639fca33af7401bc991588fb5c",
-			"revisionTime": "2017-04-03T13:23:57Z"
+			"revision": "5a63e61b591864826a0e7c978722f609d2b7f2d0",
+			"revisionTime": "2017-04-03T14:09:39Z"
 		},
 		{
-			"checksumSHA1": "0J4KGocymhRNW9cpaeqLQbg9ilM=",
+			"checksumSHA1": "+NbO03uAugnK3z2fEIrf180rCGM=",
 			"path": "github.com/qnib/qcollect-ng/filters/id",
-			"revision": "1e512d680f9176639fca33af7401bc991588fb5c",
-			"revisionTime": "2017-04-03T13:23:57Z"
+			"revision": "5a63e61b591864826a0e7c978722f609d2b7f2d0",
+			"revisionTime": "2017-04-03T14:09:39Z"
 		},
 		{
-			"checksumSHA1": "EsvNsxhbqRGwM/bH5Vxai1EYGGE=",
+			"checksumSHA1": "8S23i2r45MmxU2fO0Cl3qwnBsN0=",
 			"path": "github.com/qnib/qcollect-ng/handlers/log",
-			"revision": "1e512d680f9176639fca33af7401bc991588fb5c",
-			"revisionTime": "2017-04-03T13:23:57Z"
+			"revision": "5a63e61b591864826a0e7c978722f609d2b7f2d0",
+			"revisionTime": "2017-04-03T14:09:39Z"
 		},
 		{
-			"checksumSHA1": "0PVV1QqgvheFUTq73hdGi5+UUlY=",
+			"checksumSHA1": "5mrUUT93dfGRUwsl7/AQsB+r5uQ=",
 			"path": "github.com/qnib/qcollect-ng/handlers/opentsdb",
-			"revision": "1e512d680f9176639fca33af7401bc991588fb5c",
-			"revisionTime": "2017-04-03T13:23:57Z"
+			"revision": "5a63e61b591864826a0e7c978722f609d2b7f2d0",
+			"revisionTime": "2017-04-03T14:09:39Z"
 		},
 		{
-			"checksumSHA1": "yPwvM+2wQ7Q02tyoDSpmTPuxO+Y=",
+			"checksumSHA1": "ytAR4EHsCW9oHxbP97HwO4UI9L4=",
 			"path": "github.com/qnib/qcollect-ng/types",
-			"revision": "1e512d680f9176639fca33af7401bc991588fb5c",
-			"revisionTime": "2017-04-03T13:23:57Z"
+			"revision": "5a63e61b591864826a0e7c978722f609d2b7f2d0",
+			"revisionTime": "2017-04-03T14:09:39Z"
 		},
 		{
 			"checksumSHA1": "R4RnPtx4aVeBFydUxn+uta5OmN0=",
@@ -115,6 +127,12 @@
 			"path": "github.com/qnib/qframe/utils",
 			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
 			"revisionTime": "2017-04-03T11:42:44Z"
+		},
+		{
+			"checksumSHA1": "JXUVA1jky8ZX8w09p2t5KLs97Nc=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "4d4bfba8f1d1027c4fdbe371823030df51419987",
+			"revisionTime": "2017-01-30T11:31:45Z"
 		},
 		{
 			"checksumSHA1": "m8hYD/alsufIYIM7sR06wbL+dKo=",
