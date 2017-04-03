@@ -32,6 +32,11 @@ func main() {
 			Value: "qcollect-ng.yml",
 			Usage: "Config file, will overwrite flag default if present.",
 		},
+		cli.StringFlag{
+			Name:  "ld-path",
+			Value: "lib/",
+			Usage: "Library base path for golang plugins",
+		},
 	}
 	app.Action = qserver.Run
 	app.Run(os.Args)

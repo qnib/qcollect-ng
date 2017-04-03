@@ -3,6 +3,50 @@
 	"ignore": "test",
 	"package": [
 		{
+			"path": "C",
+			"revision": ""
+		},
+		{
+			"path": "bufio",
+			"revision": ""
+		},
+		{
+			"path": "bytes",
+			"revision": ""
+		},
+		{
+			"path": "container/heap",
+			"revision": ""
+		},
+		{
+			"path": "encoding",
+			"revision": ""
+		},
+		{
+			"path": "encoding/base64",
+			"revision": ""
+		},
+		{
+			"path": "encoding/hex",
+			"revision": ""
+		},
+		{
+			"path": "encoding/json",
+			"revision": ""
+		},
+		{
+			"path": "errors",
+			"revision": ""
+		},
+		{
+			"path": "flag",
+			"revision": ""
+		},
+		{
+			"path": "fmt",
+			"revision": ""
+		},
+		{
 			"checksumSHA1": "pPH/BoINXxzYDObljpsGZbysMrw=",
 			"path": "github.com/BurntSushi/toml",
 			"revision": "b26d9c308763d68093482582cea63d69be07a0f0",
@@ -75,58 +119,58 @@
 			"revisionTime": "2016-01-10T10:55:54Z"
 		},
 		{
-			"checksumSHA1": "NcRCJICfGuS8KnPTuMzqHqc22oI=",
+			"checksumSHA1": "srAlNJ70CcTrBpohUeJZllKp8uI=",
 			"path": "github.com/qnib/qcollect-ng",
-			"revision": "69177d57df31183926bddff323c0e4e638d5980c",
-			"revisionTime": "2017-04-03T14:47:55Z"
+			"revision": "4571859cde76bef7ad01809b726b4cde7d70cad6",
+			"revisionTime": "2017-04-03T14:53:01Z"
 		},
 		{
 			"checksumSHA1": "pA+hvd1sU/uX/3YS2okDpN/l1U0=",
 			"path": "github.com/qnib/qcollect-ng/collectors/file",
-			"revision": "69177d57df31183926bddff323c0e4e638d5980c",
-			"revisionTime": "2017-04-03T14:47:55Z"
+			"revision": "4571859cde76bef7ad01809b726b4cde7d70cad6",
+			"revisionTime": "2017-04-03T14:53:01Z"
 		},
 		{
 			"checksumSHA1": "+NbO03uAugnK3z2fEIrf180rCGM=",
 			"path": "github.com/qnib/qcollect-ng/filters/id",
-			"revision": "69177d57df31183926bddff323c0e4e638d5980c",
-			"revisionTime": "2017-04-03T14:47:55Z"
+			"revision": "4571859cde76bef7ad01809b726b4cde7d70cad6",
+			"revisionTime": "2017-04-03T14:53:01Z"
 		},
 		{
 			"checksumSHA1": "8S23i2r45MmxU2fO0Cl3qwnBsN0=",
 			"path": "github.com/qnib/qcollect-ng/handlers/log",
-			"revision": "69177d57df31183926bddff323c0e4e638d5980c",
-			"revisionTime": "2017-04-03T14:47:55Z"
+			"revision": "4571859cde76bef7ad01809b726b4cde7d70cad6",
+			"revisionTime": "2017-04-03T14:53:01Z"
 		},
 		{
 			"checksumSHA1": "5mrUUT93dfGRUwsl7/AQsB+r5uQ=",
 			"path": "github.com/qnib/qcollect-ng/handlers/opentsdb",
-			"revision": "69177d57df31183926bddff323c0e4e638d5980c",
-			"revisionTime": "2017-04-03T14:47:55Z"
+			"revision": "4571859cde76bef7ad01809b726b4cde7d70cad6",
+			"revisionTime": "2017-04-03T14:53:01Z"
 		},
 		{
 			"checksumSHA1": "ytAR4EHsCW9oHxbP97HwO4UI9L4=",
 			"path": "github.com/qnib/qcollect-ng/types",
-			"revision": "69177d57df31183926bddff323c0e4e638d5980c",
-			"revisionTime": "2017-04-03T14:47:55Z"
+			"revision": "4571859cde76bef7ad01809b726b4cde7d70cad6",
+			"revisionTime": "2017-04-03T14:53:01Z"
 		},
 		{
-			"checksumSHA1": "R4RnPtx4aVeBFydUxn+uta5OmN0=",
+			"checksumSHA1": "reJN4JcstsEfsC2+sYXR4x2JJ4I=",
 			"path": "github.com/qnib/qframe/server",
-			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
-			"revisionTime": "2017-04-03T11:42:44Z"
+			"revision": "1f97faa8f2c078d1cd7d4448fb839bbce5dc83bf",
+			"revisionTime": "2017-04-03T15:05:47Z"
 		},
 		{
 			"checksumSHA1": "Fmefc2A1jP0emwjGc1I2ediSDjM=",
 			"path": "github.com/qnib/qframe/types",
-			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
-			"revisionTime": "2017-04-03T11:42:44Z"
+			"revision": "1f97faa8f2c078d1cd7d4448fb839bbce5dc83bf",
+			"revisionTime": "2017-04-03T15:05:47Z"
 		},
 		{
-			"checksumSHA1": "PMXyLxDclbYZdfh2WJVUMehicz4=",
+			"checksumSHA1": "k+JI0tuuWFAsjjqpvMxG0XlSzaY=",
 			"path": "github.com/qnib/qframe/utils",
-			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
-			"revisionTime": "2017-04-03T11:42:44Z"
+			"revision": "1f97faa8f2c078d1cd7d4448fb839bbce5dc83bf",
+			"revisionTime": "2017-04-03T15:05:47Z"
 		},
 		{
 			"checksumSHA1": "JXUVA1jky8ZX8w09p2t5KLs97Nc=",
@@ -165,7 +209,123 @@
 			"revisionTime": "2017-02-08T14:18:51Z"
 		},
 		{
+			"path": "io",
+			"revision": ""
+		},
+		{
+			"path": "io/ioutil",
+			"revision": ""
+		},
+		{
+			"path": "log",
+			"revision": ""
+		},
+		{
+			"path": "math",
+			"revision": ""
+		},
+		{
+			"path": "net",
+			"revision": ""
+		},
+		{
+			"path": "net/http",
+			"revision": ""
+		},
+		{
+			"path": "net/http/httptest",
+			"revision": ""
+		},
+		{
+			"path": "net/url",
+			"revision": ""
+		},
+		{
+			"path": "os",
+			"revision": ""
+		},
+		{
+			"path": "os/signal",
+			"revision": ""
+		},
+		{
+			"path": "path/filepath",
+			"revision": ""
+		},
+		{
+			"path": "plugin",
+			"revision": ""
+		},
+		{
+			"path": "reflect",
+			"revision": ""
+		},
+		{
 			"path": "regex",
+			"revision": ""
+		},
+		{
+			"path": "regexp",
+			"revision": ""
+		},
+		{
+			"path": "runtime",
+			"revision": ""
+		},
+		{
+			"path": "runtime/debug",
+			"revision": ""
+		},
+		{
+			"path": "sort",
+			"revision": ""
+		},
+		{
+			"path": "strconv",
+			"revision": ""
+		},
+		{
+			"path": "strings",
+			"revision": ""
+		},
+		{
+			"path": "sync",
+			"revision": ""
+		},
+		{
+			"path": "sync/atomic",
+			"revision": ""
+		},
+		{
+			"path": "syscall",
+			"revision": ""
+		},
+		{
+			"path": "testing",
+			"revision": ""
+		},
+		{
+			"path": "text/tabwriter",
+			"revision": ""
+		},
+		{
+			"path": "text/template",
+			"revision": ""
+		},
+		{
+			"path": "time",
+			"revision": ""
+		},
+		{
+			"path": "unicode",
+			"revision": ""
+		},
+		{
+			"path": "unicode/utf8",
+			"revision": ""
+		},
+		{
+			"path": "unsafe",
 			"revision": ""
 		}
 	],
