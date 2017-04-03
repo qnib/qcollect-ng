@@ -6,7 +6,8 @@ pipeline:
     image: qnib/uplain-golang
     commands:
      - govendor update +l
-     - govendor fetch +v
+     - govendor fetch +m
+     - govendor update +v
      - ./test.sh
      - ./build.sh
      - go build -o bin/qcollect-ng

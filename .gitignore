@@ -26,3 +26,4 @@ resources/metrics.*
 vendor
 resources/coverity/*
 bin/*
+.idea
