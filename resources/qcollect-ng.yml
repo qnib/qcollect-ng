@@ -1,6 +1,6 @@
 ticker:
     interval: 5000
-collectors: "file"
+collectors: "docker-stats,file"
 filters: "id"
 handlers: "influxdb"
 collector:
@@ -12,4 +12,4 @@ handler:
     inputs: "id"
   influxdb:
     server: "172.17.0.1"
-    inputs: "file"
+    inputs: "id"
