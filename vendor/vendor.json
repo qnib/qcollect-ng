@@ -1,0 +1,149 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "pPH/BoINXxzYDObljpsGZbysMrw=",
+			"path": "github.com/BurntSushi/toml",
+			"revision": "b26d9c308763d68093482582cea63d69be07a0f0",
+			"revisionTime": "2017-03-28T06:15:53Z"
+		},
+		{
+			"checksumSHA1": "GfZvfJZHPiNFI2KTFF9HfNNAMuA=",
+			"path": "github.com/codegangsta/cli",
+			"revision": "8ba6f23b6e36d03666a14bd9421f5e3efcb59aca",
+			"revisionTime": "2017-03-29T01:35:17Z"
+		},
+		{
+			"checksumSHA1": "ImX1uv6O09ggFeBPUJJ2nu7MPSA=",
+			"path": "github.com/ghodss/yaml",
+			"revision": "0ca9ea5df5451ffdf184b4428c902747c2c11cd7",
+			"revisionTime": "2017-03-27T23:54:44Z"
+		},
+		{
+			"checksumSHA1": "+IH9gXMht4fL/fxKRZ4sqGBps1g=",
+			"path": "github.com/go-ini/ini",
+			"revision": "e7fea39b01aea8d5671f6858f0532f56e8bff3a5",
+			"revisionTime": "2017-03-28T15:39:02Z"
+		},
+		{
+			"checksumSHA1": "zodCK6AG5/I4EcNPTma0cRFls1k=",
+			"path": "github.com/grafov/bcast",
+			"revision": "15c6a671b975da343a7b04bba6e330e7dc4904b9",
+			"revisionTime": "2017-03-04T07:09:54Z"
+		},
+		{
+			"checksumSHA1": "pjrfmwxpsR/8X6vkhU5uWkXC1oQ=",
+			"path": "github.com/hpcloud/tail",
+			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
+			"revisionTime": "2017-02-07T02:33:46Z"
+		},
+		{
+			"checksumSHA1": "JQP5xDlFbFT+PZT8Yk70J5tchUE=",
+			"path": "github.com/hpcloud/tail/ratelimiter",
+			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
+			"revisionTime": "2017-02-07T02:33:46Z"
+		},
+		{
+			"checksumSHA1": "0xM336Lb25URO/1W1/CtGoRygVU=",
+			"path": "github.com/hpcloud/tail/util",
+			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
+			"revisionTime": "2017-02-07T02:33:46Z"
+		},
+		{
+			"checksumSHA1": "yl5hPKT5X6MwsiaaZgPNNxn0Y64=",
+			"path": "github.com/hpcloud/tail/watch",
+			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
+			"revisionTime": "2017-02-07T02:33:46Z"
+		},
+		{
+			"checksumSHA1": "j65V4wnJboT4pfppNC/gjr2Gl+c=",
+			"path": "github.com/hpcloud/tail/winfile",
+			"revision": "faf842bde7ed83bbc3c65a2c454fae39bc29a95f",
+			"revisionTime": "2017-02-07T02:33:46Z"
+		},
+		{
+			"checksumSHA1": "iOwduGlper7wrs3+LN9vUI+96vI=",
+			"path": "github.com/qnib/qcollect-ng",
+			"revision": "7e575d1e62692345a97f7c32034ef939364d9963",
+			"revisionTime": "2017-04-03T09:50:20Z"
+		},
+		{
+			"checksumSHA1": "q8ZQX/UTRo5CbsV0xM9X3/IiazQ=",
+			"path": "github.com/qnib/qcollect-ng/collectors/file",
+			"revision": "7e575d1e62692345a97f7c32034ef939364d9963",
+			"revisionTime": "2017-04-03T09:50:20Z"
+		},
+		{
+			"checksumSHA1": "0J4KGocymhRNW9cpaeqLQbg9ilM=",
+			"path": "github.com/qnib/qcollect-ng/filters/id",
+			"revision": "7e575d1e62692345a97f7c32034ef939364d9963",
+			"revisionTime": "2017-04-03T09:50:20Z"
+		},
+		{
+			"checksumSHA1": "EsvNsxhbqRGwM/bH5Vxai1EYGGE=",
+			"path": "github.com/qnib/qcollect-ng/handlers/log",
+			"revision": "7e575d1e62692345a97f7c32034ef939364d9963",
+			"revisionTime": "2017-04-03T09:50:20Z"
+		},
+		{
+			"checksumSHA1": "yPwvM+2wQ7Q02tyoDSpmTPuxO+Y=",
+			"path": "github.com/qnib/qcollect-ng/types",
+			"revision": "7e575d1e62692345a97f7c32034ef939364d9963",
+			"revisionTime": "2017-04-03T09:50:20Z"
+		},
+		{
+			"checksumSHA1": "R4RnPtx4aVeBFydUxn+uta5OmN0=",
+			"path": "github.com/qnib/qframe/server",
+			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
+			"revisionTime": "2017-04-03T11:42:44Z"
+		},
+		{
+			"checksumSHA1": "Fmefc2A1jP0emwjGc1I2ediSDjM=",
+			"path": "github.com/qnib/qframe/types",
+			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
+			"revisionTime": "2017-04-03T11:42:44Z"
+		},
+		{
+			"checksumSHA1": "PMXyLxDclbYZdfh2WJVUMehicz4=",
+			"path": "github.com/qnib/qframe/utils",
+			"revision": "e7b48dd41c9260d8591d52a491b0856bd79089d4",
+			"revisionTime": "2017-04-03T11:42:44Z"
+		},
+		{
+			"checksumSHA1": "m8hYD/alsufIYIM7sR06wbL+dKo=",
+			"path": "github.com/zpatrick/go-config",
+			"revision": "710646a45582fde23bf77bacbc2f38008dc7ffc2",
+			"revisionTime": "2016-11-18T20:29:31Z"
+		},
+		{
+			"checksumSHA1": "mIZhS4hXW3qVQxsJ6tqztjJoJ8A=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "9a7256cb28ed514b4e1e5f68959914c4c28a92e0",
+			"revisionTime": "2017-03-29T05:31:33Z"
+		},
+		{
+			"checksumSHA1": "eIhF+hmL/XZhzTiAwhLD0M65vlY=",
+			"path": "gopkg.in/fsnotify.v1",
+			"revision": "629574ca2a5df945712d3079857300b5e4da0236",
+			"revisionTime": "2016-10-11T02:33:12Z"
+		},
+		{
+			"checksumSHA1": "TO8baX+t1Qs7EmOYth80MkbKzFo=",
+			"path": "gopkg.in/tomb.v1",
+			"revision": "dd632973f1e7218eb1089048e0798ec9ae7dceb8",
+			"revisionTime": "2014-10-24T13:56:13Z"
+		},
+		{
+			"checksumSHA1": "0KwOlQV1dNUh9X8t+5s7nX5bqfk=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "a3f3340b5840cee44f372bddb5880fcbc419b46a",
+			"revisionTime": "2017-02-08T14:18:51Z"
+		},
+		{
+			"path": "regex",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/qnib/qcollect-ng"
+}

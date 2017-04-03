@@ -1,0 +1,12 @@
+ticker:
+    interval: 5000
+collectors: "file"
+filters: "id"
+handlers: "log"
+collector:
+  file:
+    path: "resources/metrics.graphite"
+    reopen: true                  # If file is truncated it will be reopened
+handler:
+  log:
+    inputs: "id"
