@@ -2,7 +2,7 @@ ticker:
     interval: 5000
 collectors: "docker-stats,file"
 filters: "id"
-handlers: "influxdb"
+handlers: "influxdb,opentsdb"
 collector:
   file:
     path: "resources/metrics.graphite"
@@ -13,3 +13,7 @@ handler:
   influxdb:
     server: "172.17.0.1"
     inputs: "id"
+  opentsdb:
+    server: "172.17.0.1"
+    inputs: "id"
+    target: "influxdb"
