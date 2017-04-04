@@ -1,8 +1,8 @@
 ticker:
     interval: 5000
-collectors: "docker-stats,file"
+collectors: "docker-stats"
 filters: "id"
-handlers: "influxdb,opentsdb"
+handlers: "opentsdb"
 collector:
   file:
     path: "resources/metrics.graphite"
