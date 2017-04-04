@@ -7,24 +7,16 @@ import (
 
 	"github.com/zpatrick/go-config"
 	"github.com/qnib/qcollect-ng/types"
+	"github.com/qnib/qcollect-ng/utils"
 	fTypes "github.com/qnib/qframe/types"
 	"github.com/hpcloud/tail"
 
 	"strconv"
 	"time"
 	"fmt"
+	"github.com/qnib/qwatch/inputs"
 )
 
-func getParams(regEx *regexp.Regexp, str string) (paramsMap map[string]string) {
-	match := regEx.FindStringSubmatch(str)
-	paramsMap = make(map[string]string)
-	for i, name := range regEx.SubexpNames() {
-		if i > 0 && i <= len(match) {
-			paramsMap[name] = match[i]
-		}
-	}
-	return
-}
 
 var (
    rx = map[string]string{
@@ -49,7 +41,7 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 	regX := regexp.MustCompile(rx[mForm])
 	dim := make(map[string]string)
 	for line := range t.Lines {
-		m := getParams(regX, line.Text)
+		m := qinput.GetParams(regX, line.Text)
 		if len(m) == 0  {
 			continue
 		}
