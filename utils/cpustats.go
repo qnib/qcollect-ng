@@ -4,7 +4,6 @@ package qutils
 
 import (
 	"github.com/docker/docker/api/types"
-	"fmt"
 	"github.com/fsouza/go-dockerclient"
 
 )
