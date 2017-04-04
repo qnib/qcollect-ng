@@ -40,9 +40,19 @@ func ContainerListener(cli *docker.Client, qChan fTypes.QChan, id, name string) 
 			log.Println(err.Error())
 			return
 		}
+
 		dim := map[string]string{
 			"container_id": id,
 			"container_name": name,
+			"service_name": "none",
+			"task_slot": "none",
+			"task_id": "none",
+		}
+		task, err := qutils.ContainerNameExtractService([]string{name})
+		if err == nil {
+			dim["task_id"] = task.TaskID
+			dim["task_slot"] = task.Slot
+			dim["service_name"] = task.Name
 		}
 		pre := qutils.TransformFsouzaToDocker(stats.PreCPUStats)
 		cur := qutils.TransformFsouzaToDocker(stats.CPUStats)
@@ -79,8 +89,9 @@ func ListenDispatcher(qChan fTypes.QChan, dockerHost string) {
 	// Initialize already running containers
 	cnts, err := engineCli.ContainerList(context.Background(), types.ContainerListOptions{})
 	for _, cnt := range cnts {
-		log.Printf("[II] Start listener for already running '%s' [%s]", cnt.Names[0], cnt.ID)
-		go ContainerListener(cntClient, qChan, cnt.ID, cnt.Names[0])
+		cname := qutils.SanatizeContainerName(cnt.Names)
+		log.Printf("[II] Start listener for already running '%s' [%s]", cname, cnt.ID)
+		go ContainerListener(cntClient, qChan, cnt.ID, cname)
 	}
 
 	msgs, errs := engineCli.Events(context.Background(), types.EventsOptions{})
