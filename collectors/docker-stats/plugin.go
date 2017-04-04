@@ -13,11 +13,13 @@ import (
 	"github.com/zpatrick/go-config"
 
 	"github.com/qnib/qcollect-ng/types"
+	"github.com/qnib/qcollect-ng/utils"
 	fTypes "github.com/qnib/qframe/types"
+	"sync"
 )
 
 // ContainerListener spwan a goroutine per container and streams the stats into the metrics-channel
-func ContainerListener(cli *docker.Client, outChan chan qtypes.Metric, id, name string) {
+func ContainerListener(cli *docker.Client, qChan fTypes.QChan, id, name string) {
 	errChannel := make(chan error, 1)
 	statsChannel := make(chan *docker.Stats)
 
@@ -42,13 +44,20 @@ func ContainerListener(cli *docker.Client, outChan chan qtypes.Metric, id, name 
 			"container_id": id,
 			"container_name": name,
 		}
-		val := float64(stats.CPUStats.CPUUsage.TotalUsage)
-		qm := qtypes.NewExt("input", "docker-stats", "cpu-total", qtypes.Gauge, val, dim, stats.Read, false)
-		outChan <-qm
+		pre := qutils.TransformFsouzaToDocker(stats.PreCPUStats)
+		cur := qutils.TransformFsouzaToDocker(stats.CPUStats)
+		cpuStats := qutils.DiffCPUStats(pre, cur)
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "cpu.system.ms", qtypes.Gauge, float64(cpuStats.SystemUsage/10000000), dim, stats.Read, false))
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "cpu.usage.ms", qtypes.Gauge, float64(cpuStats.CPUUsage.TotalUsage/10000000), dim, stats.Read, false))
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "memory.usage.bytes", qtypes.Gauge, float64(stats.MemoryStats.Usage), dim, stats.Read, false))
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "memory.limit.bytes", qtypes.Gauge, float64(stats.MemoryStats.Limit), dim, stats.Read, false))
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "pid.current.count", qtypes.Gauge, float64(stats.PidsStats.Current), dim, stats.Read, false))
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "net.rx.bytes", qtypes.Gauge, float64(stats.Network.RxBytes), dim, stats.Read, false))
+		qChan.Data.Send(qtypes.NewExt("input", "docker-stats", "net.tx.bytes", qtypes.Gauge, float64(stats.Network.TxBytes), dim, stats.Read, false))
 	}
 }
 
-func ListenDispatcher(outChan chan qtypes.Metric, dockerHost string) {
+func ListenDispatcher(qChan fTypes.QChan, dockerHost string) {
 	cntClient, err := docker.NewClient(dockerHost)
 	if err != nil {
 		log.Printf("[EE] Could not connect fsouza/go-dockerclient to '%s': %v", dockerHost, err)
@@ -75,7 +84,7 @@ func ListenDispatcher(outChan chan qtypes.Metric, dockerHost string) {
 				switch dMsg.Action {
 				case "start":
 					log.Printf("[II] Container started ID:%s", dMsg.ID)
-					go ContainerListener(cntClient, outChan, dMsg.ID, dMsg.Actor.Attributes["name"])
+					go ContainerListener(cntClient, qChan, dMsg.ID, dMsg.Actor.Attributes["name"])
 				case "die":
 					log.Printf("[II] Container died ID:%s", dMsg.ID)
 				default:
@@ -94,13 +103,10 @@ func ListenDispatcher(outChan chan qtypes.Metric, dockerHost string) {
 func Run(qChan fTypes.QChan, cfg config.Config) {
 	log.Println("[II] Start docker-stats collector")
 	dockerHost, _ := cfg.StringOr("collector.docker-stats.docker-host", "unix:///var/run/docker.sock")
-	outChan := make(chan qtypes.Metric, 50)
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go ListenDispatcher(qChan, dockerHost)
 
-	go ListenDispatcher(outChan, dockerHost)
-
-	for {
-		qm := <-outChan
-		qChan.Data.Send(qm)
-	}
+	wg.Wait()
 
 }
