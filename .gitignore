@@ -27,3 +27,4 @@ vendor
 resources/coverity/*
 bin/amd64/*
 .idea
+plugins.tar
