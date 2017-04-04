@@ -76,6 +76,13 @@ func ListenDispatcher(qChan fTypes.QChan, dockerHost string) {
 	} else {
 		log.Printf("[II] Connected to '%s' w/ ServerVersion:'%s'", info.ID, info.ServerVersion)
 	}
+	// Initialize already running containers
+	cnts, err := engineCli.ContainerList(context.Background(), types.ContainerListOptions{})
+	for _, cnt := range cnts {
+		log.Printf("[II] Start listener for already running '%s' [%s]", cnt.Names[0], cnt.ID)
+		go ContainerListener(cntClient, qChan, cnt.ID, cnt.Names[0])
+	}
+
 	msgs, errs := engineCli.Events(context.Background(), types.EventsOptions{})
 	for {
 		select {
