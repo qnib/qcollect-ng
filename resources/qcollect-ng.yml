@@ -1,6 +1,6 @@
 ticker:
     interval: 5000
-collectors: "docker-stats"
+collectors: "docker-stats,internal"
 filters: "id"
 handlers: "opentsdb"
 collector:

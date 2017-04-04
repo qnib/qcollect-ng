@@ -1,41 +1,39 @@
 package main
-/*
+
+
 import (
 	"C"
 	"log"
-	"regexp"
-
 	"github.com/zpatrick/go-config"
 	"github.com/qnib/qcollect-ng/types"
-	"github.com/qnib/qcollect-ng/utils"
 	fTypes "github.com/qnib/qframe/types"
  	"runtime"
-	"strconv"
 	"time"
-	"fmt"
 )
 
 
-func extractMetrics() (metrics []qtypes.Metric) {
-	counters := map[string]float64{
-		"NumGoroutine": float64(runtime.NumGoroutine()),
-		"TotalAlloc":   float64(m.TotalAlloc),
-		"Lookups":      float64(m.Lookups),
-		"Mallocs":      float64(m.Mallocs),
-		"Frees":        float64(m.Frees),
-		"PauseTotalNs": float64(m.PauseTotalNs),
-		"NumGC":        float64(m.NumGC),
-	}
+func extractMetrics(stats runtime.MemStats) ([]qtypes.Metric) {
+	var dims map[string]string
+	now := time.Now()
+	metrics := []qtypes.Metric{
+		qtypes.NewExt("collector", "internal", "goroutine.count", qtypes.Counter, float64(runtime.NumGoroutine()), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.alloc.total", qtypes.Counter, float64(stats.TotalAlloc), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.lookups", qtypes.Counter, float64(stats.Lookups), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.mallocs", qtypes.Counter, float64(stats.Mallocs), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.frees", qtypes.Counter, float64(stats.Frees), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.pause.total.ns", qtypes.Counter, float64(stats.PauseTotalNs), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.gc.count", qtypes.Counter, float64(stats.NumGC), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.alloc.bytes", qtypes.Gauge, float64(stats.Alloc), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.sys.bytes", qtypes.Gauge, float64(stats.Sys), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.heap.alloc.bytes", qtypes.Gauge, float64(stats.HeapAlloc), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.heap.sys.bytes", qtypes.Gauge, float64(stats.HeapSys), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.heap.idle.bytes", qtypes.Gauge, float64(stats.HeapIdle), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.heap.inuse.bytes", qtypes.Gauge, float64(stats.HeapInuse), dims, now, false),
+		qtypes.NewExt("collector", "internal", "memory.heap.objects.count", qtypes.Gauge, float64(stats.HeapObjects), dims, now, false),
 
+	}
+	/*
 	gauges := map[string]float64{
-		"Alloc":        float64(m.Alloc),
-		"Sys":          float64(m.Sys),
-		"HeapAlloc":    float64(m.HeapAlloc),
-		"HeapSys":      float64(m.HeapSys),
-		"HeapIdle":     float64(m.HeapIdle),
-		"HeapInuse":    float64(m.HeapInuse),
-		"HeapReleased": float64(m.HeapReleased),
-		"HeapObjects":  float64(m.HeapObjects),
 		"StackInuse":   float64(m.StackInuse),
 		"StackSys":     float64(m.StackSys),
 		"MSpanInuse":   float64(m.MSpanInuse),
@@ -47,21 +45,24 @@ func extractMetrics() (metrics []qtypes.Metric) {
 		"OtherSys":     float64(m.OtherSys),
 		"NextGC":       float64(m.NextGC),
 		"LastGC":       float64(m.LastGC),
-	}
+	}*/
 
-	return
+	return metrics
 }
 
 func Run(qChan fTypes.QChan, cfg config.Config) {
 	log.Println("[II] Start internal collector")
 
+	tick, _ := cfg.IntOr("collector.internal.tick", 1000)
+	ticker := time.NewTicker(time.Millisecond * time.Duration(tick)).C
+
 	stats := new(runtime.MemStats)
-	runtime.ReadMemStats(stats)
 
 	for {
-		//qm := qtypes.NewExt("input", "file", m["metric"], qtypes.Gauge, val, dim, time.Unix(int64(t),0), false)
-		//qChan.Data.Send(qm)
-		fmt.Printf("huhu\n")
+		<-ticker
+		runtime.ReadMemStats(stats)
+		for _, m := range extractMetrics(*stats) {
+			go qChan.Data.Send(m)
+		}
 	}
 }
-*/
