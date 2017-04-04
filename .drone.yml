@@ -2,12 +2,21 @@ workspace:
   base: /usr/local/src/
   path: github.com/qnib/qcollect-ng
 pipeline:
-  build:
+  govendor:
     image: qnib/uplain-golang
     commands:
      - govendor update +l
      - govendor fetch +m
-     - govendor update +v
+     - govendor fetch +e
+  test:
+    image: qnib/uplain-golang
+    commands:
      - ./bin/test.sh
+  build:
+    image: qnib/uplain-golang
+    commands:
      - ./bin/build.sh
+  release:
+    image: qnib/uplain-golang
+    commands:
      - ./bin/release.sh

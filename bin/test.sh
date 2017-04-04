@@ -4,8 +4,8 @@ PROJECT=qcollect-ng
 if [ ! -d resources/coverity ];then
     mkdir -p resources/coverity
 fi
-echo "> go test -cover -coverprofile=resources/coverity/${PROJECT}.cover"
-go test -cover -coverprofile=resources/coverity/${PROJECT}.cover >>/dev/null
+echo "> go test -cover -coverprofile=resources/coverity/${PROJECT}.cover ."
+go test -cover -coverprofile=resources/coverity/${PROJECT}.cover . >>/dev/null
 COVER_FILES="resources/coverity/${PROJECT}.cover"
 for x in $(find . -type d |egrep -v "(\.$|\.git|vendor|bin|lib|resources|.idea|(collectors|filters|handlers)$)");do
     echo "> go test -cover -coverprofile=resources/coverity/${x}.cover ${x}"

@@ -1,4 +1,4 @@
-package handler_opentsdb
+package main
 
 import (
 	"testing"
@@ -15,5 +15,5 @@ var (
 
 func TestConvertToOpenTSDBHandler(t *testing.T) {
 	exp := "put test 1491227867 10.000000\n"
-	assert.Equal(t, exp, convertToOpenTSDBHandler(m))
+	assert.Equal(t, exp, m.ConvertToOpenTSDBHandler(""))
 }

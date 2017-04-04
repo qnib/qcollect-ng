@@ -1,0 +1,11 @@
+ticker:
+    interval: 5000
+collectors: "docker-stats,internal"
+filters: "id"
+handlers: "opentsdb"
+collector:
+handler:
+  opentsdb:
+    server: "172.17.0.1"
+    inputs: "id"
+    target: "influxdb"

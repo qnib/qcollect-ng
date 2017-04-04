@@ -1,0 +1,30 @@
+version: '3'
+services:
+  backend:
+    image: ${BACKEND_IMG:-qnib/plain-influxdb}
+    environment:
+     - INFLUXDB_DATABASES=qcollect
+     - INFLUXDB_META_LOGGING=true
+     - INFLUXDB_OPENTSDB_ENABLED=true
+     - INFLUXDB_GRAPHITE_ENABLED=true
+    volumes:
+     - /opt/influxdb/shared
+    ports:
+     - 2003:2003
+     - 4242:4242
+     - 8083:8083
+     - 8086:8086
+
+  frontend:
+    image: ${FRONTEND_IMG:-qnib/plain-grafana4}
+    ports:
+     - 3000:3000
+    environment:
+     - QCOLLECT_HOST=http://${SERVICE:-qcollect-ng}_backend:8086
+
+  collector:
+    image: ${COLLECTOR_IMG:-qnib/qcollect-ng}
+    environment:
+     - GRAFANA_DATA_SOURCES="qcollect,elasticsearch,opentsdb"
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock

@@ -17,7 +17,7 @@ func TestContainerNameExtractService(t *testing.T) {
 	names := []string{"/influxdb_backend.1.f2hypsmktounqx1p1p85o81f5"}
 	exp := DockerServiceTask{
 		Name: "influxdb_backend",
-		Slot: 1,
+		Slot: "1",
 		TaskID: "f2hypsmktounqx1p1p85o81f5",
 	}
 	got, _ := ContainerNameExtractService(names)
