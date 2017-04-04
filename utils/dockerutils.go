@@ -3,6 +3,9 @@ package qutils
 import (
 	"strings"
 	"fmt"
+	"regexp"
+	"errors"
+	"strconv"
 )
 
 type DockerServiceTask struct {
@@ -17,13 +20,14 @@ func SanatizeContainerName(names []string) (string) {
 
 func ContainerNameExtractService(names []string) (task DockerServiceTask, err error) {
 	name := SanatizeContainerName(names)
-	m := qutils.GetParams(`(?P<service>[a-z\-\.\_0-9]+)\.(?P<slot>[0-9]+)\.(?P<task_id>[a-f0-9]+)`, name)
+	regEx := regexp.MustCompile(`(?P<service>[a-z\-\.\_0-9]+)\.(?P<slot>[0-9]+)\.(?P<task_id>[a-z0-9]+)`)
+	m := GetParams(regEx, name)
 	if len(m) == 3 {
 		task.TaskID = m["task_id"]
-		task.Slot = int(m["slot"])
+		task.Slot, _ = strconv.Atoi(m["slot"])
 		task.Name = m["service"]
 	} else {
-		err = error.New(fmt.Sprintf("Container Name '%s' does not match the service-task nameing scheme", name))
+		err = errors.New(fmt.Sprintf("Container Name '%s' does not match the service-task nameing scheme", name))
 	}
 	return
 }
