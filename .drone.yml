@@ -8,6 +8,6 @@ pipeline:
      - govendor update +l
      - govendor fetch +m
      - govendor update +v
-     - ./test.sh
-     - ./build.sh
-     - go build -o bin/qcollect-ng
+     - ./bin/test.sh
+     - ./bin/build.sh
+     - ./bin/release.sh

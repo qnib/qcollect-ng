@@ -25,5 +25,5 @@ _testmain.go
 resources/metrics.*
 vendor
 resources/coverity/*
-bin/*
+bin/amd64/*
 .idea
