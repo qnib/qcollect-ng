@@ -16,6 +16,7 @@ pipeline:
     image: qnib/uplain-golang
     commands:
      - ./bin/build.sh
+     - tar cf plugins.tar lib/
   release:
     image: qnib/uplain-golang
     commands:
