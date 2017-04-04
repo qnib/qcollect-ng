@@ -5,12 +5,11 @@ import (
 	"fmt"
 	"regexp"
 	"errors"
-	"strconv"
 )
 
 type DockerServiceTask struct {
 	Name string
-	Slot int
+	Slot string
 	TaskID string
 }
 func SanatizeContainerName(names []string) (string) {
@@ -24,7 +23,7 @@ func ContainerNameExtractService(names []string) (task DockerServiceTask, err er
 	m := GetParams(regEx, name)
 	if len(m) == 3 {
 		task.TaskID = m["task_id"]
-		task.Slot, _ = strconv.Atoi(m["slot"])
+		task.Slot, _ = m["slot"]
 		task.Name = m["service"]
 	} else {
 		err = errors.New(fmt.Sprintf("Container Name '%s' does not match the service-task nameing scheme", name))

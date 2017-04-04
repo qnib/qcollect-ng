@@ -14,7 +14,6 @@ import (
 	"strconv"
 	"time"
 	"fmt"
-	"github.com/qnib/qwatch/inputs"
 )
 
 
@@ -41,7 +40,7 @@ func Run(qChan fTypes.QChan, cfg config.Config) {
 	regX := regexp.MustCompile(rx[mForm])
 	dim := make(map[string]string)
 	for line := range t.Lines {
-		m := qinput.GetParams(regX, line.Text)
+		m := qutils.GetParams(regX, line.Text)
 		if len(m) == 0  {
 			continue
 		}
