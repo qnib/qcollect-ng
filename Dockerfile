@@ -7,9 +7,9 @@ RUN apt-get update \
  && echo "Download '$(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo qcollect-ng --regex "qcollect-ng_.*" --limit 1)'" \
  && wget -qO /usr/local/bin/qcollect-ng $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo qcollect-ng --regex "qcollect-ng_.*" --limit 1) \
  && chmod +x /usr/local/bin/qcollect-ng \
- && mkdir -p /opt/qnib/qcollect-ng/ \
+ && mkdir -p /opt/qcollect-ng/ \
  && echo "Download '$(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo qcollect-ng --regex "plugins.tar" --limit 1)'" \
- && wget -qO- $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo qcollect-ng --regex "plugins.tar" --limit 1) |tar xf - -C /opt/qnib/qcollect-ng/ \
+ && wget -qO- $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo qcollect-ng --regex "plugins.tar" --limit 1) |tar xf - -C /opt/qcollect-ng/ \
  && apt-get purge -y wget \
  && apt-get autoclean \
  && rm -f /usr/local/bin/go-github
