@@ -15,6 +15,8 @@ RUN apt-get update \
  && rm -f /usr/local/bin/go-github
 
 COPY resources/docker/qcollect-ng.yml /etc/
+COPY ./lib /opt/qcollect-ng/
+COPY bin/amd64/qcollect-ng /usr/local/bin/
 
 CMD ["qcollect-ng", "--config=/etc/qcollect-ng.yml", "--ld-path=/opt/qcollect-ng/lib/"]
 

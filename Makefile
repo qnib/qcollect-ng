@@ -16,8 +16,8 @@ gov-remove:
 test:
 	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/test.sh ; else ./bin/test.sh ; fi
 collectors: gov-update
-	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./build.sh collectors ; else ./build.sh collectors ; fi
+	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh collectors ; else ./bin/build.sh collectors ; fi
 filters: gov-update
-	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./build.sh filters ; else ./build.sh filters ; fi
+	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh filters ; else ./bin/build.sh filters ; fi
 handlers: gov-update
-	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./build.sh handlers ; else ./build.sh handlers ; fi
+	if test -z "$$local"; then docker run -t --rm -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh handlers ; else ./bin/build.sh handlers ; fi
