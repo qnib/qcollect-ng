@@ -1,2 +1,3 @@
-#bin/*
-#lib/*
+resources/docker/bin/*
+resources/docker/lib/*
+vendor/*
