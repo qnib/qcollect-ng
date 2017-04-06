@@ -8,18 +8,18 @@ all: gov-fetch gov-remove libs binary
 
 libs: gov-update collectors filters handlers
 gov-update:
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) govendor update +l ; else govendor update +l ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) govendor update +l
 gov-fetch:
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) govendor fetch +e +m +v; else govendor fetch +e +m +v; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) govendor fetch +e +m +v
 gov-remove:
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) govendor remove +u ; else govendor remove +u ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) govendor remove +u
 test:
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/test.sh ; else ./bin/test.sh ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/test.sh
 collectors: gov-update
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh collectors ; else ./bin/build.sh collectors ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh collectors
 filters: gov-update
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh filters ; else ./bin/build.sh filters ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh filters
 handlers: gov-update
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh handlers ; else ./bin/build.sh handlers ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh handlers
 binary: libs
-	if test -z "$$local"; then docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) go build -o bin/amd64/qcollect-ng ; else go build -o bin/amd64/qcollect-ng ; fi
+	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) go build -o resources/docker/bin/qcollect-ng

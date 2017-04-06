@@ -401,64 +401,64 @@
 			"revisionTime": "2016-01-10T10:55:54Z"
 		},
 		{
-			"checksumSHA1": "UtAxidX6kOFVSUSAvyY0go6sTK8=",
+			"checksumSHA1": "vmpx4uqggPLKxKSdN+BsOkuaNHw=",
 			"path": "github.com/qnib/qcollect-ng",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "w6JthwRJJ8Yr5CzT2X0P4Q2TRQU=",
+			"checksumSHA1": "IqfoZCdPLGE2pigIIxO0wxMq2E8=",
 			"path": "github.com/qnib/qcollect-ng/collectors/docker-stats",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "fv48OLNNGjRdBUvczrxGElp6cS0=",
+			"checksumSHA1": "YgUtUSe7f1HDn5UE04ZGoNDOuO8=",
 			"path": "github.com/qnib/qcollect-ng/collectors/file",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "IrVov97JMMsRfFZZAaffqHnHYlM=",
+			"checksumSHA1": "Ny6s9znWAJmtHwNy61cA2WcZCew=",
 			"path": "github.com/qnib/qcollect-ng/collectors/internal",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "oxJihZirkzd/l6V9GlI8Cpz4zyM=",
+			"checksumSHA1": "cdibNHNkh/i61PR+p6ycIPyGDhk=",
 			"path": "github.com/qnib/qcollect-ng/filters/id",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "ewRi9isP6T2WlaahbqlqgdYPEPk=",
+			"checksumSHA1": "d/Rp5nBDbRTxHHsdAeCo7f75Ymk=",
 			"path": "github.com/qnib/qcollect-ng/handlers/influxdb",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "WGrroTUgFxMUv/hObN06Ng8Xkbk=",
+			"checksumSHA1": "t4K043tuLBbTP8hs1w1eA8M6ts0=",
 			"path": "github.com/qnib/qcollect-ng/handlers/log",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "7hNYzLC0CVthohqSbGYaBWKzmoU=",
+			"checksumSHA1": "agtToRdLxkOJjqPaZj0Lbh11KBg=",
 			"path": "github.com/qnib/qcollect-ng/handlers/opentsdb",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "tMJ9i2P4cr8vRhI6DP6o37p575c=",
+			"checksumSHA1": "nRgCCmPc1XEkHbF/Vmb4ORbEIYE=",
 			"path": "github.com/qnib/qcollect-ng/types",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
-			"checksumSHA1": "D5t1w1DvrWq8fGvH/PEHYXoJxOs=",
+			"checksumSHA1": "XSVyGIJzBdqS/kzdy/FdBvcXzhI=",
 			"path": "github.com/qnib/qcollect-ng/utils",
-			"revision": "33f2ca1086b77b9e2d1d2440a62e191374d22e31",
-			"revisionTime": "2017-04-05T17:33:06Z"
+			"revision": "e418c0759b0741ad3a00fcd7691dcf1b6a3c7755",
+			"revisionTime": "2017-04-06T16:30:27Z"
 		},
 		{
 			"checksumSHA1": "xzaeMQ/2GmljPKmTMi7r1FuSXD4=",
