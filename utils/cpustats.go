@@ -1,6 +1,6 @@
 package qutils
 
-/*
+
 import (
 	"github.com/docker/docker/api/types"
 	"github.com/fsouza/go-dockerclient"
@@ -59,4 +59,3 @@ func DiffCPUStats(pre types.CPUStats, cur types.CPUStats) types.CPUStats {
 
 	return cstat
 }
-*/

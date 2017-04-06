@@ -23,3 +23,5 @@ handlers: gov-update
 	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) ./bin/build.sh handlers
 binary: libs
 	docker run -t --rm -e SKIP_ENTRYPOINTS=1 -v ${CURDIR}:$(SRCDIR) -w $(SRCDIR) $(DOCKERIMG) go build -o resources/docker/bin/qcollect-ng
+docker:
+	docker build -t qnib/qcollect-ng:local resources/docker/.
