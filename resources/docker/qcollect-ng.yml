@@ -4,6 +4,8 @@ collectors: "docker-stats,internal"
 filters: "id"
 handlers: "opentsdb"
 collector:
+  docker-stats:
+    ignore-regex: "^[a-z]+_[a-z]+$"
 handler:
   opentsdb:
     server: "172.17.0.1"

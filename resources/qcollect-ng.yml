@@ -7,6 +7,8 @@ collector:
   file:
     path: "resources/metrics.graphite"
     reopen: true                  # If file is truncated it will be reopened
+  docker-stats:
+    ignore-regex: "^[a-z]+_[a-z]+$" # Do not collect stats for unnamed containers. Maybe aggregate all unnamed containers?
 handler:
   log:
     inputs: "id"
